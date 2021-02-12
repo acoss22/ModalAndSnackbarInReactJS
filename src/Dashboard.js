@@ -26,7 +26,8 @@ class Dashboard extends Component {
         <main>
           <h1>React Modal</h1>
           <Modal show={this.state.show} handleClose={this.hideModal}>
-            <p>Modal</p>
+            <p>Are you sure you want to proceed? </p>
+           
           </Modal>
           <button type="button" onClick={this.showModal}>
             Open
