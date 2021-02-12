@@ -23,12 +23,20 @@ export default function CustomizedSnackbars() {
         setOpenFail(true);
     };
 
-    const handleClose = (event, reason) => {
+    const handleCloseSuccess = (event, reason) => {
         if (reason === 'clickaway') {
             return;
         }
 
         setOpen(false);
+    };
+
+    const handleCloseFail = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpenFail(false);
     };
 
     return (
@@ -40,16 +48,16 @@ export default function CustomizedSnackbars() {
                 Open Fail snackbar
       </Button>
 
-            <Snackbar className='item' open={openSucess} autoHideDuration={2000} onClose={handleClose} anchorOrigin={{ vertical: "top", horizontal: "right" }}>
+            <Snackbar className='item' open={openSucess} autoHideDuration={2000} onClose={handleCloseSuccess} anchorOrigin={{ vertical: "top", horizontal: "right" }}>
 
-                <Alert onClose={handleClose} severity="success">
+                <Alert onClose={handleCloseSuccess} severity="success">
                     This is a success message!
                             </Alert>
             </Snackbar>
 
-            <Snackbar className='item' open={openFail} autoHideDuration={2000} onClose={handleClose} anchorOrigin={{ vertical: "top", horizontal: "right" }}>
+            <Snackbar className='item' open={openFail} autoHideDuration={2000} onClose={handleCloseFail} anchorOrigin={{ vertical: "top", horizontal: "right" }}>
 
-                <Alert onClose={handleClose} severity="error">
+                <Alert onClose={handleCloseFail} severity="error">
                     This is a error message!
                 </Alert>
             </Snackbar>
