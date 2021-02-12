@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modal from './Modal';
 import Snackbar from './Snackbar';
-
+import Button from '@material-ui/core/Button';
 class Dashboard extends Component {
     constructor(){
         super();
@@ -23,17 +23,17 @@ class Dashboard extends Component {
 
     render() {
       return (
-        <main>
-          <h1>React Modal</h1>
+        <div className="container">
+          <h1>React Modal  and Snackbars using Material UI</h1>
           <Modal show={this.state.show} handleClose={this.hideModal}>
             <p>Are you sure you want to proceed? </p>
            
           </Modal>
-          <button type="button" onClick={this.showModal}>
+          <Button  className='item button' variant="outlined"   onClick={this.showModal}>
             Open
-          </button>
+          </Button>
           <Snackbar />
-        </main>
+        </div>
       )
       }
 }
